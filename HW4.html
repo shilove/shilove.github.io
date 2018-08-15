@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW4</title>
+    <script>
+//        1
+        var num=prompt("Введите число от 0 до 999");
+        function numToObj(num){
+            if(num.length<=3){
+                var arr=num.split("")
+                for(var i=0;i<3-num.length;i++){
+                    arr.splice(0,0,"0");
+                }
+                var numObject={};
+                numObject.units=arr[2];
+                numObject.tens=arr[1];
+                numObject.hundreds=arr[0];
+                return numObject;
+            }
+            else{
+                console.log("Число больше 999");
+                return numObject=null;
+            }
+        }
+        console.log(numToObj(num));
+        
+        2 c сайта
+        в отдельном файле src/game.html
+        
+//        2 из методички
+        var count=parseInt(prompt("Сколько добавим товаров в корзину?",1)); // определяем количество товаров в корзине
+        var basket=[]; // создаем массив
+        for(var i=0;i<count;i++){ // вносим данные масива по каждому товару
+            basket[i]={name:prompt("Наименование товара?"), price:parseInt(prompt("Стоимость товара?",100))};
+            document.write("<b>"+basket[i].name+"</b>: ");
+            document.write(basket[i].price+"<br>");
+        }
+        
+        countBasketPrice();
+        
+        function countBasketPrice(){
+            var basketPrice=0;
+            for(var i in basket){ // узнав количество товаров в корзине, суммируем поле price, т.е. стоимость
+                 basketPrice+=basket[i].price;
+            }
+            document.write("Общая стоимость товаров в корзине: "+basketPrice);
+        }
+        
+//    3 в отдельном файле million/game.html    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

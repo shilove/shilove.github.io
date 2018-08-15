@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW2</title>
+    <script>
+//        1
+        var a = 1, b = 1, c, d;
+        c = ++a; alert(c); // a=a+1, c=a - префиксная форма записи инкремента сначала увеличивает значение на 1, а потом записывается в переменную, поэтому результат 2
+        d = b++; alert(d); // d=b, b=b+1 - постфиксная форма инкремента, сначала d присваивается значение b=1, а затем b увеличивается на 1 
+        c = (2+ ++a); alert(c); // a=a+1, с=(2+a) - a увеличивается на 1, т.е. равно 3, затем прибавляется к 2, итого с=5
+        d = (2+ b++); alert(d); // d=(2+b), b=b+1 - к 2 прибавляется b равное 2, затем b увеличиваем на 1, итого d=4
+        alert(a); // после всех действий с инкрементом a=3 
+        alert(b); // b=3
+        
+//        2
+        var a=2;
+        var x=1+(a*=2); // a=a*2, т.е. 4, к нему прибавляем 1, итого 5  
+        alert(x);
+        
+//        3
+        var a=parseInt(prompt("Введите целое число a",0));
+        var b=parseInt(prompt("Введите целое число b",0));
+        if((a>=0)&&(b>=0)){
+            alert(a-b);
+        }
+        else if((a<0)&&(b<0)){
+            alert(a*b);
+        }
+        else{
+            alert(a+b);
+        }
+        
+//        4
+        var a=Math.round(Math.random()*15);
+        alert("переменной а случайно присвоено значение "+a);
+        switch(a){
+            case 1:
+                alert(1);
+            case 2:
+                alert(2);
+            case 3:
+                alert(3);
+            case 4:
+                alert(4);
+            case 5:
+                alert(5);
+            case 6:
+                alert(6);
+            case 7:
+                alert(7);
+            case 8:
+                alert(8);
+            case 9:
+                alert(9);
+            case 10:
+                alert(10);
+            case 11:
+                alert(11);
+            case 12:
+                alert(12);
+            case 13:
+                alert(13);
+            case 14:
+                alert(14);
+            case 15:
+                alert(15);
+        };
+//        5
+        var func=prompt("Какую операцию вы выбираете? (сложение, вычитание, умножение или деление)", "сложение");
+        var a=parseFloat(prompt("Введите переменную а", 0));
+        var b=parseFloat(prompt("Введите переменную b", 0));
+        function sum(a, b){ // сложение
+            var res=a+b;
+            return res;
+        };
+        function dif(a, b){ // вычитание
+            var res=a-b;
+            return res;
+        };
+        function mult(a, b){ // умножение
+            var res=a*b;
+            return res;
+        };
+        function div(a, b){ // деление
+            var res=a/b;
+            return res;
+        };
+        switch(func){
+            case "сложение":
+                alert(sum(a,b));
+                break;
+            case "вычитание":
+                alert(dif(a,b));
+                break;
+            case "умножение":
+                alert(mult(a,b));
+                break;
+            case "деление":
+                alert(div(a,b));
+        };
+//        6
+        var arg1=parseFloat(prompt("Введите певрое число",0));
+        var arg2=parseFloat(prompt("Введите второе число",0));
+        var operation=prompt("Какую операцию вы выбираете? (сложение, вычитание, умножение или деление)", "сложение");
+        function mathOperation(arg1, arg2, operation){
+            switch(operation){
+                case "сложение":
+                    alert(sum(arg1,arg2));
+                    break;
+                case "вычитание":
+                    alert(dif(arg1,arg2));
+                    break;
+                case "умножение":
+                    alert(mult(arg1,arg2));
+                    break;
+                case "деление":
+                    alert(div(arg1,arg2));
+            };
+        };
+        mathOperation(arg1,arg2,operation);
+//        7
+        if(null>0){
+            alert("null больше 0");
+        }
+        else if(null==0){
+            alert("null равен 0");
+        }
+        else{
+            alert("null меньше 0"); // null будет меньше 0, т.к. null - это ничто, а 0 - бесконечно малое число.
+        };
+//        8
+        var val=parseFloat(prompt("Введите число",0));
+        var pow=parseInt(prompt("В какую степень возвести?",2));
+        var i=0;
+        function power(val, pow){ // и т.п. для степени равно нулю и отрицательных степеней
+            if(i++<pow){
+                alert("i="+i);
+                return val*power(val,pow-1);
+            }
+            return val;
+        };
+        alert(power(val,pow));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

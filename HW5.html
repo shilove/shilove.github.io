@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        html{
+            font-size: 30px;
+        }
+        #buttonWord{
+            display: none;
+        }
+        #buttonPic{
+            display: none;
+        }
+    </style>
+    <script>
+        function createChessBoard(){
+            var abc=["A","B","C","D","E","F","G","H"]; // массив буквенных обозначений
+            $("body").append("<table id='chessBoard'></table>"); // в body помещаем table
+            $("table").css("border-spacing","0px"); // форматируем table
+            console.log("Доска создана");
+            
+            for(var i=0;i<=9;i++){ // вставляем в таблицу строки
+                $("table").append("<tr id='chessLine"+i+"'></tr>");
+                console.log("Строка №"+i+" создана");
+                for(var j=0;j<=9;j++){ // в строки ячейки
+                    $("#chessLine"+i).append("<td id='chessCell"+j+"'></td>");
+                    console.log("Ячейка №"+j+" создана");
+                }
+            }
+            
+            var chessLine=$("tr").length; // число строк
+            var x=0;
+            for(var i=0;i<chessLine;i++){ // начинает перебирать строки и выполнять форматирование ячеек
+                var chessCell=$("#chessLine"+i+" td").length; // число ячеек в i-й строке
+                if(i>0&&i<9){ // если строка между 0й и 9й строкой
+                    for(var j=0;j<chessCell;j++){ // перебираем ячейки в строке
+                        if(j>0&&j<9){ // если ячейка между 0й и 9й ячейкой
+                            if((x+i)%2==0){ // немного магии для раскраски клеток
+                                $("#chessLine"+i+" #chessCell"+j).css("border","solid 3px black"); //
+                                $("#chessLine"+i+" #chessCell"+j).css("background-color","black"); //
+                                $("#chessLine"+i+" #chessCell"+j).css("color","white"); //
+                            }
+                            else{
+                                $("#chessLine"+i+" #chessCell"+j).css("border","solid 3px white"); //
+                                $("#chessLine"+i+" #chessCell"+j).css("background-color","white"); //
+                                $("#chessLine"+i+" #chessCell"+j).css("color","black"); //
+                            }
+                            x++;
+                        }
+                        else{ //иначе
+                            $("#chessLine"+i+" #chessCell"+j).append(i); //нумеруем строки сначала по 0й ячейке, потом по 9й
+                        }
+                    }
+                }
+                else{ // иначе
+                    for(var j=1;j<chessCell;j++){ // перебираем ячейки сначала в 0, потом в 9 строке
+                        $("#chessLine"+i+" #chessCell"+j).append(abc[j-1]); // из массива проставляем буквы
+                    }
+                }
+            }
+            $("td").css("height","50px");
+            $("td").css("width","50px");
+            $("td").css("text-align","center");
+            $("#buttonCreate").hide();
+            $("#buttonWord").show();
+        };
+        
+        function chessWord(){ //расставляем буквенные обозначения, тут все просто, может не очень цивильно...
+            var chessFigureWord=[["Л","Кн","С","Ф","Кр","С","Кн","Л"],"П"];
+            for(var i=1;i<=chessFigureWord[0].length;i++){
+                $("#chessLine1 #chessCell"+i).html(chessFigureWord[0][i-1]);
+                $("#chessLine2 #chessCell"+i).html(chessFigureWord[1]);
+                $("#chessLine7 #chessCell"+i).html(chessFigureWord[1]);
+                $("#chessLine8 #chessCell"+i).html(chessFigureWord[0][i-1]);
+            }
+            $("#buttonWord").hide();
+            $("#buttonPic").show();
+        };
+        
+        function chessPic(){
+            var chessFigureWord=[["&#9814;","&#9816;","&#9815;","&#9813;","&#9812;","&#9815;","&#9816;","&#9814;"],"&#9817;"];
+            for(var i=1;i<=chessFigureWord[0].length;i++){
+                $("#chessLine1 #chessCell"+i).html(chessFigureWord[0][i-1]);
+                $("#chessLine2 #chessCell"+i).html(chessFigureWord[1]);
+                $("#chessLine7 #chessCell"+i).html(chessFigureWord[1]);
+                $("#chessLine8 #chessCell"+i).html(chessFigureWord[0][i-1]);
+            }
+            $("#buttonPic").hide();
+            $("#buttonWord").show();
+        };
+    </script>
+</head>
+<body>
+    <button id="buttonCreate" onclick="createChessBoard()">Построить шахматную доску</button>
+    <button id="buttonWord" onclick="chessWord()">Расставить буквенные обозначения шахмат</button>
+    <button id="buttonPic" onclick="chessPic()">Заменить буквы на фигуры</button>
+</body>
+</html>

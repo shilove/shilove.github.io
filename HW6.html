@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW6</title>
+    <style>
+    *{
+        margin:0px;
+    }
+    .b-popup{
+        width:100%;
+        min-height:100%;
+        background-color: rgba(0,0,0,0.5);
+        overflow:hidden;
+        position:fixed;
+        top:0px;
+    }
+    .b-popup #b-popup-content{
+        margin:40px auto 0px auto;
+        width: 40%;
+        min-width: 300px;
+        padding:10px;
+        background-color: #c5c5c5;
+        border-radius:5px;
+        box-shadow: 0px 0px 10px #000;
+    }
+        .basket{
+            margin: 20px auto 0px auto;
+            width:90%;
+            height:200px;
+            background-color: #c5c5c5;
+        }
+    </style>
+    <script>        
+        //Функция отображения PopUp
+        function PopUpShow(x){
+            var popUpDiv = document.createElement("div"); // создаем div (серый фон)
+            popUpDiv.className="b-popup"; // назначаем класс
+            popUpDiv.id="popup1"; //.. id
+            popUpDiv.onclick=function(){ // функцию на onClick
+                PopUpHide(); // функция закрытия картинки
+            };
+            document.body.appendChild(popUpDiv); // добавляем в body элемент
+            
+            var popUp = document.createElement("div"); // создаем div, в который поместим картинку
+            popUp.id="b-popup-content"; // назначаем id
+            document.getElementById("popup1").appendChild(popUp); // вставляем в ранее созданный div
+            
+            var toLeft = document.createElement("div"); // создаем div, в который поместим картинку
+            toLeft.id="toLeft"; // назначаем id
+            toLeft.textContent="Назад";
+            toLeft.onclick=function(){
+                listPic(this.id);
+            };
+            toLeft.style.display="inline-block"; 
+            document.getElementById("b-popup-content").appendChild(toLeft); // вставляем в ранее созданный div
+            
+            var img = document.createElement("img"); // наконец создаем img
+            img.src = "./bigPic/"+x+".jpg"; // склеиваем ссылку
+            img.id = x; // склеиваем ссылку
+            img.setAttribute("width","82%"); // назначаем атрибут ширины
+            img.style.display="inline-block"; // назначаем id
+            document.getElementById("b-popup-content").appendChild(img); // вставляем в div "b-popup-content"
+            
+            var toRight = document.createElement("div"); // создаем div, в который поместим картинку
+            toRight.id="toRight"; // назначаем id
+            toRight.textContent="Вперед";
+            toRight.onclick=function(){
+                listPic(this.id);
+            };
+            toRight.style.display="inline-block"; 
+            document.getElementById("b-popup-content").appendChild(toRight); // вставляем в ранее созданный div
+
+            img.onerror = function() { // проверяем ссылку
+                alert( "Ошибка: по адресу " + this.src + " ничего не найдено");
+                document.getElementById("popup1").remove(); // если ошибка, то и div удаляем
+            };
+        }
+        
+        //Функция скрытия PopUp
+        function PopUpHide(){
+            document.getElementById("popup1").remove();
+        }
+        
+        //Функция добавления товара в корзину
+        function addToBasket(x){
+            var basketCount=document.getElementById("basketLine").childElementCount; //смотрим что есть в корзине
+            if(basketCount>0){// если в корзине что-то есть
+                var arrbasket=[];         
+                for(var i=0;i<basketCount;i++){
+                    arrbasket[i]=document.getElementById("basketLine").childNodes[i].getAttribute("id"); // id товаров из корзины заносим в массив
+                }
+                var pos=arrbasket.indexOf(x); // ищем выбранный товар в корзине
+                if(pos>=0){ // если есть совпадение
+                    console.log("В корзине есть такой товар, увеличиваем количсество");
+                    var a=parseFloat(document.getElementById("basketLine").childNodes[pos].childNodes[2].textContent); // берем его стоимость
+                    for(var i=0;i<arrImage.length;i++){ // ищем его стоимость в массиве товаров
+                        if(x==arrImage[i].transcriptionName){
+                            a+=arrImage[i].price; // прибавляем
+                            sumBasket(arrImage[i].price); // увеличиваем общую стоимость
+                        }
+                    }
+                    document.getElementById("basketLine").childNodes[pos].childNodes[2].innerText=a;
+                }
+                else{
+                    console.log("В корзине есть товар, но другой, добавляем");
+                    addToCart(x);
+                }
+            }
+            else{
+                console.log("Корзина пуста, добавляем");
+                addToCart(x);
+            }
+        }
+        
+        //Функция суммирования товаров корзины
+        function sumBasket(x){
+            var sum=parseFloat(document.getElementById("sumPrice").innerText); // смотрим на какую сумму уже набрали
+            sum+=x; // прибавляем стоимость нового товара
+            document.getElementById("sumPrice").innerText=sum; // отображаем новую общую стоимость
+        }
+        
+        //Функция вставки выбранного товара в ленту корзины
+        function addToCart(x){
+            for(var i=0;i<arrImage.length;i++){
+                if(x==arrImage[i].transcriptionName){
+                    var lineDiv=document.createElement("div");
+                    lineDiv.style.width="150px";
+                    lineDiv.style.height="150px";
+                    lineDiv.style.margin="5px";
+                    lineDiv.id=arrImage[i].transcriptionName;
+                    lineDiv.style.display="inline-block";
+                    document.getElementById("basketLine").appendChild(lineDiv);
+                    var lineDivTitle=document.createElement("span");
+                    lineDivTitle.textContent=arrImage[i].name;
+                    lineDivTitle.style.display="block";
+                    document.getElementById(arrImage[i].transcriptionName).appendChild(lineDivTitle);
+                    var lineImg=document.createElement("img");
+                    lineImg.src="./smallpic/thumbs_"+arrImage[i].transcriptionName+".jpg";
+                    lineImg.style.width="100px";
+                    lineImg.style.height="100px";
+                    lineImg.style.display="block";
+                    document.getElementById(arrImage[i].transcriptionName).appendChild(lineImg);
+                    var linePrice=document.createElement("span");
+                    linePrice.textContent=arrImage[i].price;
+                    linePrice.style.display="block";
+                    document.getElementById(arrImage[i].transcriptionName).appendChild(linePrice);
+                    sumBasket(arrImage[i].price);
+                }
+            }
+        }
+        
+        function listPic(x){
+            document.getElementById("popup1").onclick = function(e) {
+                if(e.target.id != x)
+                return;
+            }
+            var arrbasket=[];      
+            for(var i=0;i<arrImage.length;i++){
+                arrbasket[i]=arrImage[i].transcriptionName;
+            }
+            var id=document.getElementById("b-popup-content").childNodes[1].getAttribute("id");
+            var pos=arrbasket.indexOf(id);
+            switch(x){
+                case "toLeft":
+                    --pos;
+                    break;
+                case "toRight":
+                    ++pos;
+            }
+            document.getElementById("b-popup-content").childNodes[1].setAttribute("src","./bigpic/"+arrImage[pos].transcriptionName+".jpg");
+            document.getElementById("b-popup-content").childNodes[1].setAttribute("id",arrImage[pos].transcriptionName);
+        }
+    </script>
+</head>
+<body>
+    <div width="500px" height="200px"></div>
+    <script>
+        var arrImage=[
+            {name:"Молоток",
+             price:200.5,
+             transcriptionName:"hammer"
+            },
+            {name:"Плоскогубцы",
+             price:250,
+             transcriptionName:"pliers"
+            },
+            {name:"Отвертка",
+             price:100,
+             transcriptionName:"screw"
+            }
+        ];
+            var basket=document.createElement("div");
+            basket.className="basket";
+            basket.id="basket";
+            document.body.appendChild(basket);
+            var productLine=document.createElement("div");
+            productLine.style.width="100%";
+            productLine.style.height="10%";
+            productLine.textContent="Ваша корзина";
+            document.getElementById("basket").appendChild(productLine);
+            var productLine=document.createElement("div");
+            productLine.id="basketLine";
+            productLine.style.width="100%";
+            productLine.style.height="75%";
+            document.getElementById("basket").appendChild(productLine);
+            var sumPrice=document.createElement("div");
+            sumPrice.style.height="15%";
+            sumPrice.style.width="20%";
+            sumPrice.style.backgroundColor="grey";
+            sumPrice.style.display="inline-block";
+            sumPrice.textContent="Общая сумма: ";
+            document.getElementById("basket").appendChild(sumPrice);
+            var sumPrice=document.createElement("div");
+            sumPrice.style.height="15%";
+            sumPrice.style.width="80%";
+            sumPrice.style.backgroundColor="dimgrey";
+            sumPrice.style.textAlign="right";
+            sumPrice.style.display="inline-block";
+            sumPrice.id="sumPrice";
+            sumPrice.textContent="0.00";
+            document.getElementById("basket").appendChild(sumPrice);
+
+            for(var i=0;i<=2;i++){ // выводим все картинки
+                var productDiv=document.createElement("div");
+                productDiv.id=arrImage[i].transcriptionName;
+                productDiv.style.display="inline-block";
+                productDiv.style.border="solid 1px black";
+                productDiv.style.margin="5px";
+                productDiv.style.padding="5px";
+                document.body.appendChild(productDiv);
+                var productTitle=document.createElement("span");
+                productTitle.textContent=arrImage[i].name;
+                productTitle.style.display="block";
+                document.getElementById(arrImage[i].transcriptionName).appendChild(productTitle);
+                var img = document.createElement("img"); //создаем элемент img
+                img.style.display="block";
+                img.id=arrImage[i].transcriptionName;
+                img.src = "./smallpic/thumbs_"+arrImage[i].transcriptionName+".jpg"; // берем ссылку из массива
+                img.onclick=function(){ // назначаем функцию на onClick
+                    PopUpShow(this.id); // на показ большой картинки отправляем ссылку на картинку, по которой уликнули
+                };
+                document.getElementById(arrImage[i].transcriptionName).appendChild(img); // добавляем элемент в body
+                img.onerror = function() { // если нет файла по ссылке
+                    alert( "Ошибка: по адресу " + this.src + " ничего не найдено");
+                };
+                var productPrice=document.createElement("span");
+                productPrice.textContent=arrImage[i].price+" руб.";
+                document.getElementById(arrImage[i].transcriptionName).appendChild(productPrice);
+                var buyButton=document.createElement("button");
+                buyButton.textContent=arrImage[i].price+" руб.";
+                buyButton.textContent="Купить";
+                buyButton.id=arrImage[i].transcriptionName;
+                buyButton.onclick=function(){
+                    addToBasket(this.id);
+                };
+                buyButton.style.position="relative";
+                buyButton.style.left="150px";
+                document.getElementById(arrImage[i].transcriptionName).appendChild(buyButton);
+            }        
+    </script>
+</body>
+</html>

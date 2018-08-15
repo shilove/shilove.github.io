@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW3</title>
+    <script>
+//        var i=1;
+//        var step=parseInt(prompt("Сколько шагов сделать перед прыжком?", 10));
+//        var ul="<ul>";
+//        while(i<=step){
+//            
+//            ul+="<li>"+i+"-й шаг</li>";
+////            document.write(i+"-я интерация инкремента<br>");
+//            i++;
+//        };
+//        ul+="<li>Прыжок!</li>"
+//        var fart=Math.round(Math.random());
+//        if(fart==0){
+//            ul+="<li>Вы не допрыгнули :(</li></ul>";
+//        }
+//        else{
+//            ul+="<li>Ура! отметка взята!</li></ul>";
+//        }
+//        document.write(ul);
+        function deposit(money, year, pr){
+            for(var i=1;i<=year;i++){
+                var p=money*pr/100; // ежегодная прибыль
+                money+=p; // money = money + p
+                document.write("За "+i+" год ваша сумма "+money+"<br>");
+            }
+        }
+        deposit(100000, 5, 8);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

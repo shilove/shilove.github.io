@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW6</title>
+</head>
+<body>
+    <h1 id="header">Заголовок</h1>
+    <select name="" id="" onchange="setColor(this.value)">
+        <option value="red">Красный</option>
+        <option value="orange">Оранжевый</option>
+        <option value="yellow">Желтый</option>
+        <option value="green">Зеленый</option>
+        <option value="blue">Синий</option>
+        <option value="black">Черный</option>
+    </select>
+    <button onclick="f()">Магия</button>
+    <hr>
+    <button id="b1" onclick="g()">Ok1</button>
+    <button id="b2">Ok2</button>
+    <button id="b3">Ok3</button>
+    <button id="b4">Ok4</button>
+    <button id="b5" onclick="console.log('b5');document.getElementById('b4').click();">Клик на В4</button>
+    <script>
+        function f(){
+            var h=document.getElementById("header");
+            h.style.color="blue";
+        }
+        function setColor(x){
+            var h=document.getElementById("header");
+            h.style.color=x;
+        }
+        function g(){
+            alert();
+        }
+        function h(){
+            console.log(this);
+        }
+        var b2=document.getElementById("b2");
+        var b3=document.getElementById("b3");
+        
+        b2.onclick=h;
+        b3.onclick=function(){
+            console.log(this);
+        }
+        
+        var f1=function(){
+            console.log("f1-1");
+            console.log(event);
+        }
+        var b4=document.getElementById("b4");
+        b4.addEventListener("click",f1);
+        b4.addEventListener("click",f2);
+        
+        function f2(){
+            console.log("f2");
+            b4.removeEventListener("click",f2);
+        }
+        
+    </script>
+</body>
+</html>

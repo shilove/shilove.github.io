@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW4</title>
+    <script>
+        var car={
+            marka: "audi", // поля
+            model: "A6",
+            year: 2017,
+            engineStarted: false
+        }
+        
+        var car2={
+            marka: "BMW", // поля
+            model: "Jetta",
+            year: 2014,
+            engineStarted: false
+        }
+        
+        car.color="red";
+        car.year=2018;
+//        console.log(car);
+        
+        car.start=startEngine;
+        
+        function startEngine(){
+            if(!this.engineStarted){
+                this.engineStarted=true;
+                console.log("Engine started!");
+            };
+        };
+        
+        car.stop=stopEngine;
+        
+        function stopEngine(){
+            if(this.engineStarted){
+                this.engineStarted=false;
+                console.log("Engine stopped!");
+            };
+        };
+        
+        function road(obj,distance){
+            obj.distance=distance;
+        };
+        
+        road(car2, 130);
+        
+        car.start();
+        console.log(car);
+        car.stop();
+        console.log(car);
+        console.log(car2);
+        
+        delete car.color;
+        
+        for(var i in car){
+            console.log(i+": "+car[i]);
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

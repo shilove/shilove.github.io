@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW5</title>
+    <style>
+        .red{
+            color:red;
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function f(){
+            $("p").css("color","blue");
+        };
+        function show(){
+            $("#p").slideDown("low");
+        };
+        function hide(){
+            $("#p").hide();
+        };
+        function add(){
+            var x="<option>Опция "+i+"</option>";
+            $("select").append(x);
+            i++;
+        };
+        function getValue(){
+            alert($("#fio").val());
+        };
+    </script>
+</head>
+<body>
+    <div id="block">
+        <h1 id='header'>My Header</h1>
+    </div>
+    <div id="p" style="display:none;">
+        <p class="article">Первый заголовок</p>
+        <p class="article">Второй заголовок</p>
+        <p class="article">Третий заголовок</p>
+        <button onClick="f()">Ок</button>
+    </div>
+    <button onClick="show()">Показать</button>
+    <button onClick="hide()">Скрыть</button>
+    <div>
+        Блок кода:
+        <div id="inner">
+            Вложенный элемент
+        </div>
+    </div>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <input type="text" id="fio">
+    <button onclick="getValue()">Получить</button>
+    <select></select>
+    <button onClick="add()">Добавить элемент в список</button>
+    <script>
+//        var h=document.getElementById('header');
+//        console.log(h);
+//        alert(h.innerText);
+//        document.getElementById("block").innerHTML="<h2>New text</h2>";
+        var list=document.getElementById("list");
+        var newItem=document.createElement("li");
+        newItem.innerHTML="<i>new element</i>";
+        var a=Math.round(Math.random()*list.childElementCount);
+        list.insertBefore(newItem, list.children[a]);
+        
+        //Вывод всех тэгов body
+        for(var i=0;i<document.body.childNodes.length;i++){
+            console.log(document.body.childNodes[i]);
+        }
+        
+        //Стилизация заголовка
+        var header=document.getElementById("header");
+        header.style.color="red";
+        document.getElementById("header").style.color="green";
+        header.style.fontSize="52px";
+        header.className="red";
+        
+        var articles=document.getElementsByClassName("article");
+//        articles[0].className="red";
+        for(var i=0, size=20;i<articles.length;i++, size+=20){
+            articles[i].style.color="red";
+            articles[i].style.fontSize=size+"px";
+        }
+        
+        var text=document.createTextNode("Новый текстовый элемент");
+        document.body.appendChild(text);
+        
+        var link=document.createElement("a");
+        link.innerText="Ссылка";
+        link.href="http://ya.ru";
+        link.target="target";
+        document.getElementById("inner").appendChild(link);
+    </script>
+</body>
+</html>
