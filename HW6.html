@@ -56,7 +56,7 @@
             document.getElementById("b-popup-content").appendChild(toLeft); // вставляем в ранее созданный div
             
             var img = document.createElement("img"); // наконец создаем img
-            img.src = "./bigPic/"+x+".jpg"; // склеиваем ссылку
+            img.src = "./bigpic/"+x+".jpg"; // склеиваем ссылку
             img.id = x; // склеиваем ссылку
             img.setAttribute("width","82%"); // назначаем атрибут ширины
             img.style.display="inline-block"; // назначаем id
@@ -136,7 +136,7 @@
                     lineDivTitle.style.display="block";
                     document.getElementById(arrImage[i].transcriptionName).appendChild(lineDivTitle);
                     var lineImg=document.createElement("img");
-                    lineImg.src="./smallPic/thumbs_"+arrImage[i].transcriptionName+".jpg";
+                    lineImg.src="./smallpic/thumbs_"+arrImage[i].transcriptionName+".jpg";
                     lineImg.style.width="100px";
                     lineImg.style.height="100px";
                     lineImg.style.display="block";
@@ -168,7 +168,7 @@
                 case "toRight":
                     ++pos;
             }
-            document.getElementById("b-popup-content").childNodes[1].setAttribute("src","./bigPic/"+arrImage[pos].transcriptionName+".jpg");
+            document.getElementById("b-popup-content").childNodes[1].setAttribute("src","./bigpic/"+arrImage[pos].transcriptionName+".jpg");
             document.getElementById("b-popup-content").childNodes[1].setAttribute("id",arrImage[pos].transcriptionName);
         }
     </script>
@@ -236,7 +236,7 @@
                 var img = document.createElement("img"); //создаем элемент img
                 img.style.display="block";
                 img.id=arrImage[i].transcriptionName;
-                img.src = "./smallPic/thumbs_"+arrImage[i].transcriptionName+".jpg"; // берем ссылку из массива
+                img.src = "./smallpic/thumbs_"+arrImage[i].transcriptionName+".jpg"; // берем ссылку из массива
                 img.onclick=function(){ // назначаем функцию на onClick
                     PopUpShow(this.id); // на показ большой картинки отправляем ссылку на картинку, по которой уликнули
                 };
