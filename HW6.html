@@ -37,9 +37,7 @@
             var popUpDiv = document.createElement("div"); // создаем div (серый фон)
             popUpDiv.className="b-popup"; // назначаем класс
             popUpDiv.id="popup1"; //.. id
-            popUpDiv.onclick=function(){ // функцию на onClick
-                PopUpHide(); // функция закрытия картинки
-            };
+            popUpDiv.onclick=PopUpHide;
             document.body.appendChild(popUpDiv); // добавляем в body элемент
             
             var popUp = document.createElement("div"); // создаем div, в который поместим картинку
