@@ -9,6 +9,8 @@
 <body>
    <h1 id="hh">моргающий текст</h1>
     <button id="b1">Click</button>
+    <img src="./smallPic/thumbs_hammer.jpg" alt="молоток" id="hammer">
+    <img src="./smallPic/thumbs_pliers.jpg" alt="Плоскогубцы" id="pliers">
     <script>
         function f(){
             console.log('f');
@@ -96,7 +98,42 @@
             };
             
         showFullName.call(user,1,2); // свойство вызова функции для объекта user
+        // одалживание метода - пример использования call, apply - передает массив аргументов
             
+        var commonShow=function(){
+            console.log("book "+this.title);
+        }
+//      // 1й вариант  
+//        var book1={
+//            title:"jongle book",
+//            author:"lokin",
+//            show:commonShow
+//        }
+//        var book2={
+//            title:"PHP",
+//            author:"this"
+//            
+//        }
+//        
+//        book2.show=book1.show;
+//        book2.show();
+        
+              // 2й вариант  
+        var book1={
+            title:"jongle book",
+            author:"lokin",
+            show:commonShow
+        }
+        var book2={
+            title:"PHP",
+            author:"this",
+            show:function(){
+                alert("123");
+            }
+        }
+        book1.show.call(book2);
+        
+        
     </script>
 </body>
 </html>
