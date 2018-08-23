@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW8</title>
+    <script>
+    </script>
+</head>
+<body>
+   <h1 id="hh">моргающий текст</h1>
+    <button id="b1">Click</button>
+    <script>
+        function f(){
+            console.log('f');
+        }
+        
+        var f2=function(a,b){ // функциональное вырадение
+            var x=a+b;
+            console.log(x);
+        }
+        f2(1,2);
+        console.log(typeof(f2));
+        
+        // анонимная функция
+        window.onload=function(){
+            document.getElementById("b1").onclick=function(){
+                console.log("buton click");
+            }
+        }
+        
+        // массивы и анонимные функции
+        var arr=[1,2,3,4,5];
+        arr.forEach(function(item,i,arr){
+            console.log("Позиция "+i+" равна "+item+" в массиве "+arr);
+        })
+        
+        function func(){
+            console.log(arguments); // arguments - псевдомассив аргументов, даже если не ждем аргументов
+            console.log(arguments[2]);
+            var arr=arguments;
+            console.log(arr[1]);
+        }
+        
+        func(1,"2",f);
+        
+        // замыкания
+        var hello=function(name){
+            return function(){
+                console.log("hi,"+name);
+            }
+        }
+        var sayHi=hello("ivan");
+        sayHi();
+        
+        var x=0;
+        function f1(){
+            return function f2(){
+                return function f3(){
+                    return ++x;
+                }
+            }
+        }
+        
+        console.log(x);
+        console.log(f1()()()); // вызывает третью вложенную функцию
+        
+        
+        var c="blue";
+        window.onload=function(){
+            setInterval(blink, 1000);
+        }
+        function blink(){
+            c=="blue"?c="red":c="blue";
+            document.getElementById("hh").style.color=c;
+        }
+        
+        
+        // еще замыкания пример
+        window.onload=function(){
+            var item=document.getElementById("b1");
+            item.onclick=function(){
+//                activeItem(item);
+                console.log(item);
+            }
+//        }
+//        function activeItem(item){
+//            console.log(item);
+        }
+            function showFullName(x,y){
+                alert(this.firstName+" "+this.lastName);
+            }
+            
+            var user={
+                firstName: "Andrey",
+                lastName: "Shilov"
+            };
+            
+        showFullName.call(user,1,2); // свойство вызова функции для объекта user
+            
+    </script>
+</body>
+</html>
