@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <title>HW8</title>
     <script>
-//    if (!("a" in window)) { //если в window нет a
-//        console.log("a" in window);
-//        var a = 1; // объявляем a и присваиваем значение 1
+//    if (!("a" in window)) { // проверяем наличие свойства a в объекте window
+//        var a = 1; // если нет, то присваиваем a значение 1
 //    }
-//    console.log(a); //показываем 1
+//    console.log(a); // показываем значение а, т.к. при интепретации под нее зарезервирвоана память, но не объявлено значение, то результат будет undefined
+//    
 //    var b = function a(x) { // в b записываем функцию a с аргументом x
 //        x && a(--x); //
 //    };
-//    alert(a);
-//    function a(x) {
-//        return x * 2;
-//    }
-//    var a;
-//    alert(a);
-    function b(x, y, a) {
-        arguments[2] = 10;
-        alert(a);
+//    console.log(a);
+    
+    function a(x) {
+        return x * 2;
     }
-    b(1, 2, 3);
+        
+    var a;
+    console.log(a);
+//    
+//    function b(x, y, a) {
+//        arguments[2] = 10;
+//        console.log(a);
+//    }
+//        
+//    b(1, 2, 3);
+//    
 //    function a() {
-//        alert(this);
+//        console.log(this);
 //    }
 //    a.call(null);
+//        console.log(null);
     </script>
 </head>
 <body>
