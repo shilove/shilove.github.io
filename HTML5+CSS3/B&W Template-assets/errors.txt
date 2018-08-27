@@ -1,0 +1,2 @@
+[2018-08-26 19:35:01] layer "somemail@hotmail.com": Unsupported extension: com
+[2018-08-26 19:35:01] layer "Phone Auricular. Attribute as Freepik from Flaticon.com": Unsupported extension: com
