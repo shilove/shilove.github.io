@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Roboto');
+
+html, body{
+    width:100%;
+    height:100%;
+    margin:0px;
+}
+
+section:nth-child(2n+1){
+    width:100%;
+    height:100%;
+    position:relative;
+    background-color: white;
+}
+
+section:nth-child(2n){
+    background-color: #1d1d1d;
+    width:100%;
+    height:150%;
+    position:relative;
+}
+
+ul{
+}
+
+li{
+    list-style-type:none;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+}
+.navigationItems {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #010101;
+}
+.navigationItems:hover{
+    color: black;
+}
+.navigationItems {
+    transition: 0.3s;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #989696;
+}
+.classH{
+    width: 55px;
+    height: 55px;
+    background-color: black;
+    color: white;
+}
+.el{
+    margin:12px;
+  width: 10px;
+  height: 10px;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+}
+.lipse1 {
+  opacity: 0.33;
+}
+.lipse2 {
+  opacity: 0.66;
+}
+
+
+
+
+
+.we-build-it-with-passion {
+  width: 464px;
+  height: 41px;
+  font-family: HelveticaNeueLTPro-Lt;
+  font-size: 44px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.39;
+  letter-spacing: 0.9px;
+  text-align: center;
+  color: #1d1e1f;
+}
+.just-to-be-clear-we-do-this-for-fun-not-for-you-just-kidding {
+  width: 454px;
+  height: 17px;
+  font-family: Merriweather;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: 1.06;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #898888;
+}
+.readMoreButton {
+  width: 188px;
+  height: 57px;
+/*  background-color: #000000;*/
+  border: solid 1px #000000;
+}
+.readMore {
+  width: 85px;
+  height: 9px;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #000000;
+}
+
+.vh{
+    height: 100%;
+    background-color: white;
+    width: 5px;
+    margin: 0px auto;
+}
+.circle{
+    width:20px;
+    height: 20px;
+    border: solid white 5px;
+    border-radius: 50%;
+    position: absolute;
+    right:calc(50% - 15px);
+    background-color: #1d1d1d;
+}
+.y2011{
+    top:151px;
+}
+.y2012{
+    top:272px;
+}
+.y2013{
+    right:calc(50% - 25px);
+    width:40px;
+    height:40px;
+    top:505px;
+}
+.y2014{
+    top:746px;
+}
+.city{
+}
+.Background-city-black {
+    width: 100%;
+    position: absolute;
+    bottom: 27px;
+  object-fit: cover;
+}
+.Background-city {
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+  object-fit: cover;
+}
