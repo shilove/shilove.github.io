@@ -101,17 +101,17 @@ Begitus vit urna nulla.</div>
         </div>
         <div>
             <div class="circleServicesPattern">
-                <div class="circleServices"><img src="" alt=""></div>
+                <figure class="circleServices"><img src="" alt=""></figure>
                 <div class="titleServices">Some Analytics</div>
                 <div class="propServices">Aenean nisi lectus, convallis non lorem sit amet, rhoncus malesuada justo</div>
             </div>
             <div class="circleServicesPattern">
-                <div class="circleServices"><img src="" alt=""></div>
+                <figure class="circleServices"><img src="" alt=""></figure>
                 <div class="titleServices">We provide you love</div>
                 <div class="propServices">Aenean nisi lectus, convallis non lorem sit amet, rhoncus malesuada justo</div>
             </div>
             <div class="circleServicesPattern">
-                <div class="circleServices"><img src="" alt=""></div>
+                <figure class="circleServices"><img src="" alt=""></figure>
                 <div class="titleServices">And Some Cloud</div>
                 <div class="propServices">Aenean nisi lectus, convallis non lorem sit amet, rhoncus malesuada justo</div>
             </div>
@@ -150,7 +150,7 @@ Begitus vit urna nulla.</div>
             <textarea name="" id="" cols="30" rows="10">Write your Message here...</textarea>
             <input type="submit">
         </div>
-        <footer class="copyright">Copyright © Kenan Hamidic. All rights reserved.</footer>
+        <footer class="copyright">Copyright © <time><?= date(Y); ?></time> Kenan Hamidic. All rights reserved.</footer>
     </section>
 </body>
 </html>
