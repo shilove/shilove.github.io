@@ -16,30 +16,24 @@ section:nth-child(2n+1){
 section:nth-child(2n){
     background-color: #1d1d1d;
     width:100%;
-    height:150%;
+    height:100%;
     position:relative;
 }
-
+nav{
+    margin:0px auto;
+}
 ul{
+    width:;
+    height: 55px;
 }
 
 li{
     list-style-type:none;
     display: inline-block;
+    margin: 0px 22.5px;
 }
 a{
     text-decoration: none;
-}
-.navigationItems {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.31;
-  letter-spacing: 0.5px;
-  text-align: center;
-  color: #010101;
 }
 .navigationItems:hover{
     color: black;
@@ -57,17 +51,20 @@ a{
   color: #989696;
 }
 .classH{
+    position: absolute;
+    top:0px;
     width: 55px;
     height: 55px;
+  font-family: Roboto;
     background-color: black;
     color: white;
 }
 .el{
-    margin:12px;
   width: 10px;
   height: 10px;
   background-color: #d0d0d0;
   border-radius: 50%;
+    margin: 12px auto;
 }
 .lipse1 {
   opacity: 0.33;
@@ -76,7 +73,10 @@ a{
   opacity: 0.66;
 }
 
-
+.dotting{
+/*    position: absolute;*/
+    bottom: 0px;
+}
 
 
 
@@ -157,16 +157,24 @@ a{
     top:746px;
 }
 .city{
+    top:0px;
+    width: 100%;
+    height: 205px;
+/*    background-color: #1d1d1d;*/
+    position: relative;
 }
 .Background-city-black {
+/*    top:-58px;*/
+    position: relative;
+    object-fit: cover;
     width: 100%;
-    position: absolute;
-    bottom: 27px;
-  object-fit: cover;
+    height: 236px;
 }
 .Background-city {
+/*    top:px;*/
+    position: relative;
+    object-fit: cover;
     width: 100%;
-    position: absolute;
-    bottom: -1px;
-  object-fit: cover;
+    height: 236px;
+    
 }
