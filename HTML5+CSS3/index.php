@@ -150,7 +150,7 @@ Begitus vit urna nulla.</div>
             <textarea name="" id="" cols="30" rows="10">Write your Message here...</textarea>
             <input type="submit">
         </div>
-        <footer class="copyright">Copyright © <time><?= date(Y); ?></time> Kenan Hamidic. All rights reserved.</footer>
+        <footer class="copyright">Copyright © <time datetime="<?= date(Y); ?>"><?= date(Y); ?></time> Kenan Hamidic. All rights reserved.</footer>
     </section>
 </body>
 </html>
