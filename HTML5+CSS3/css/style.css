@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Roboto');
-@font-face { 
-    font-family: 'HelveticaNeueLTPro-Lt';  
-    src: local('HelveticaNeueLTPro-Lt'), 
-        url('https://nomail.com.ua/files/woff/5ef4e382220d057ab771e76cf6117c68.woff') format('woff'); 
+@font-face {
+    font-family: 'HelveticaNeueLTPro-Lt';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Helvetica Neue LT Pro 45 Light'), url('https://nomail.com.ua/files/woff/5ef4e382220d057ab771e76cf6117c68.woff') format('woff');
 }
 
 
