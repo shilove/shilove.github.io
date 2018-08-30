@@ -5,6 +5,11 @@
     font-weight: normal;
     src: local('Helvetica Neue LT Pro 45 Light'), url('https://nomail.com.ua/files/woff/5ef4e382220d057ab771e76cf6117c68.woff') format('woff');
 }
+@font-face { 
+    font-family: 'TheSonnyfive';  
+    src: local('TheSonnyfive'), 
+        url('https://nomail.com.ua/files/woff/8a102d331f1085a4e479f69a50bfd619.woff') format('woff'); 
+}
 
 
 html, body{
@@ -82,7 +87,7 @@ a{
 
 h1 {
   margin: 0;
-  font-family: 'HelveticaNeueLTPro-Lt';
+  font-family: 'TheSonnyfive';
   font-size: 44px;
   font-weight: normal;
   letter-spacing: 0.9px;
