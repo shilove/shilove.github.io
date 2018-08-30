@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Roboto');
+
 @font-face {
     font-family: 'HelveticaNeueLTPro-Lt';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Helvetica Neue LT Pro 45 Light'), url('https://nomail.com.ua/files/woff/5ef4e382220d057ab771e76cf6117c68.woff') format('woff');
+    src: url('../fonts/HelveticaNeueLTPro-Lt.woff') format('woff');
 }
-@font-face { 
-    font-family: 'TheSonnyfive';  
-    src: local('TheSonnyfive'), 
-        url('https://nomail.com.ua/files/woff/8a102d331f1085a4e479f69a50bfd619.woff') format('woff'); 
+@font-face {
+    font-family: 'HelveticaNeueLTPro-Md';
+    src: url('../fonts/HelveticaNeueLTPro-Md.woff') format('woff');
+}
+@font-face {
+    font-family: 'HelveticaNeueLTPro-Roman';
+    src: url('../fonts/HelveticaNeueLTPro-Roman.woff') format('woff');
 }
 
 
@@ -78,8 +80,9 @@ a{
   opacity: 0.66;
 }
 
-.dotting{
-/*    position: absolute;*/
+.dot{
+    right: calc(50% - 5px);
+    position: absolute;
     bottom: 0px;
 }
 
@@ -87,7 +90,7 @@ a{
 
 h1 {
   margin: 0;
-  font-family: 'TheSonnyfive';
+  font-family: 'HelveticaNeueLTPro-Lt';
   font-size: 44px;
   font-weight: normal;
   letter-spacing: 0.9px;
@@ -105,8 +108,8 @@ h2 {
   color: #1d1e1f;
 }
 
-.services  h2 {
-    color:white;
+.services h2 {
+    color: white;
 }
 
 .caption {
@@ -118,20 +121,12 @@ h2 {
   color: #898888;
 }
 .readMoreButton {
+    position: absolute;
+    right: calc(50% - 94px);
   width: 188px;
   height: 57px;
-/*  background-color: #000000;*/
   border: solid 1px #000000;
-}
-.readMore {
-  width: 85px;
-  height: 9px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.31;
   letter-spacing: 0.5px;
   text-align: center;
   color: #000000;
@@ -188,4 +183,49 @@ h2 {
     width: 100%;
     height: 236px;
     
+}
+img{
+    filter: grayscale(100%);
+}
+
+.social > div {
+    display: inline-block;
+}
+
+.instagram {
+    height: 20px;
+    width: 21px;
+    background: url(../img/instagram.svg);
+}
+
+.twitter {
+    height: 18px;
+    width: 21px;
+    background: url(../img/twitter.svg);
+}
+
+.team > .profile {
+    display: inline-block;
+}
+
+.profile {
+    width: 200px;
+    text-align: center;
+}
+
+.name {
+  font-family: HelveticaNeueLTPro-Roman;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #464646;
+}
+
+.profession {
+  font-family: HelveticaNeueLTPro-Roman;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #b3b3b3;
 }
