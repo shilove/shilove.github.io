@@ -22,17 +22,13 @@ section:nth-child(2n){
 nav{
     margin:0px auto;
 }
-ul{
-    width:;
-    height: 55px;
+p{
+    display:inline-block;
 }
-
-li{
+a{
     list-style-type:none;
     display: inline-block;
     margin: 0px 22.5px;
-}
-a{
     text-decoration: none;
 }
 .navigationItems:hover{
@@ -51,8 +47,6 @@ a{
   color: #989696;
 }
 .classH{
-    position: absolute;
-    top:0px;
     width: 55px;
     height: 55px;
   font-family: Roboto;
@@ -80,28 +74,34 @@ a{
 
 
 
-.we-build-it-with-passion {
-  width: 464px;
-  height: 41px;
+h1 {
+  margin: 0;
   font-family: HelveticaNeueLTPro-Lt;
   font-size: 44px;
   font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 0.39;
   letter-spacing: 0.9px;
   text-align: center;
   color: #1d1e1f;
 }
-.just-to-be-clear-we-do-this-for-fun-not-for-you-just-kidding {
-  width: 454px;
-  height: 17px;
+
+h2 {
+  margin: 0;
+  font-family: HelveticaNeueLTPro-Lt;
+  font-size: 34px;
+  font-weight: normal;
+  letter-spacing: 0.9px;
+  text-align: center;
+  color: #1d1e1f;
+}
+
+.services  h2 {
+    color:white;
+}
+
+.caption {
   font-family: Merriweather;
   font-size: 16px;
-  font-weight: 300;
   font-style: italic;
-  font-stretch: normal;
-  line-height: 1.06;
   letter-spacing: 0.5px;
   text-align: center;
   color: #898888;
