@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Roboto');
+@font-face { 
+    font-family: 'HelveticaNeueLTPro-Lt';  
+    src: url('https://nomail.com.ua/files/woff/5ef4e382220d057ab771e76cf6117c68.woff') format('woff'); 
+};
+@font-face {
+font-family: 'font8a102d331f1085a4e479f69a50bfd619';
+    
+    src:    url('https://nomail.com.ua/files/eot/8a102d331f1085a4e479f69a50bfd619.eot?#iefix') format('embedded-opentype'),
+            url('https://nomail.com.ua/files/woff/8a102d331f1085a4e479f69a50bfd619.woff') format('woff'),
+            url('https://nomail.com.ua/files/woff2/8a102d331f1085a4e479f69a50bfd619.woff2') format('woff2');
+}
 
 html, body{
     width:100%;
@@ -20,15 +31,14 @@ section:nth-child(2n){
     position:relative;
 }
 nav{
-    margin:0px auto;
+    margin: 0 auto;
 }
-p{
-    display:inline-block;
-}
-a{
+li{
     list-style-type:none;
     display: inline-block;
     margin: 0px 22.5px;
+}
+a{
     text-decoration: none;
 }
 .navigationItems:hover{
@@ -76,7 +86,7 @@ a{
 
 h1 {
   margin: 0;
-  font-family: HelveticaNeueLTPro-Lt;
+  font-family: 'font8a102d331f1085a4e479f69a50bfd619';
   font-size: 44px;
   font-weight: normal;
   letter-spacing: 0.9px;
@@ -86,7 +96,7 @@ h1 {
 
 h2 {
   margin: 0;
-  font-family: HelveticaNeueLTPro-Lt;
+  font-family: 'HelveticaNeueLTPro-Lt';
   font-size: 34px;
   font-weight: normal;
   letter-spacing: 0.9px;
@@ -99,7 +109,7 @@ h2 {
 }
 
 .caption {
-  font-family: Merriweather;
+  font-family: 'Merriweather';
   font-size: 16px;
   font-style: italic;
   letter-spacing: 0.5px;
@@ -115,7 +125,7 @@ h2 {
 .readMore {
   width: 85px;
   height: 9px;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
