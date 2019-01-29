@@ -1,0 +1,50 @@
+body {
+    background: #f8f8f8;
+}
+
+a {
+    color: brown;
+    font: 14px tahoma;
+    text-decoration: none;
+}
+
+nav > ul {
+    list-style: none;
+}
+
+h2 {
+    color: black;
+    font: 400 18px serif;
+    background-color: #eaeaea;
+}
+
+.shortDescr {
+    color: #707070;
+    font: italic 14px serif;
+    line-height: 16px;
+}
+
+.fullDescr {
+    color: #484343;
+    font: 400 16px serif;
+    line-height: 24px;
+    text-align: left;
+}
+
+.techChar {
+    font: 400 12px sans-serif;
+    list-style: square;
+}
+
+input,
+textarea {
+    border: solid 2px #707070;
+    background-color:cornsilk;
+    border-radius: 5px;
+    width: 200px;
+}
+
+img {
+    border: 3px solid brown;
+    border-radius: 5px;
+}
