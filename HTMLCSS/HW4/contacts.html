@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <img src="./images/logo.png" alt="Тряпичный союз" title="Тряпичный союз">
+        <h1>Кишочки ССД</h1>
+        <hr>
+        <h2>Меню</h2>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Главная</a></li>
+                <li><a href="./catalog.html">Каталог</a></li>
+                <li><a href="./contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <h2>Контакты</h2>
+    <h3>Напишите нам</h3>
+    <form action="./server.php" method="POST">
+        <fieldset>
+            <legend>Заполните поля</legend>
+            <label for="name">Имя</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="theme">Тема письма</label><br>
+            <input type="text" id="theme" name="theme" required><br>
+            <label for="message">Сообщение</label><br>
+            <textarea name="message" id="message" cols="30" rows="10" required></textarea><br>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <h3>Адрес</h3>
+    <ul>
+        <li><b>Телефон:</b> +7 (904) 283-83-58</li>
+        <li><b>Почтовый адрес:</b> г. Липецк, ул. Артёмова, д. 5, кв. 140</li>
+        <li><b>Email:</b> shilov@i.ua</li>
+    </ul>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad66baa558e6b90fd19e270483e69886f3abab93710fa6d1f4a5db39ad4ce7476&amp;width=693&amp;height=434&amp;lang=ru_RU&amp;scroll=true"></script>
+    <hr>
+    <footer>
+        <p>2019 &#169; Все права защищены</p>
+    </footer>
+</body>
+</html>

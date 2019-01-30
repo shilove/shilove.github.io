@@ -1,0 +1,83 @@
+body {
+    background: #f8f8f8;
+}
+
+a {
+    color: brown;
+    font: 14px tahoma;
+    text-decoration: none;
+}
+
+ul a:hover {
+    color: chocolate;
+}
+
+nav > ul {
+    list-style: none;
+}
+
+h2 {
+    color: black;
+    font: 400 18px serif;
+    background-color: #eaeaea;
+}
+
+.shortDescr {
+    color: #707070;
+    font: italic 14px serif;
+    line-height: 16px;
+}
+
+.fullDescr {
+    color: #484343;
+    font: 400 16px serif;
+    line-height: 24px;
+    text-align: left;
+}
+
+.techChar {
+    font: 400 12px sans-serif;
+    list-style: square;
+}
+
+input,
+textarea {
+    border: solid 3px black;
+    width: 200px;
+}
+
+ul img,
+p img {
+    border: 3px solid brown;
+    border-radius: 5px;
+}
+
+ul img:hover,
+p img:hover {
+    border: 3px solid transparent;
+    border-radius: 5px;
+}
+
+h1 {
+    display: inline;
+}
+
+input[type=email]:focus {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+input[type=text]:focus,
+textarea:focus {
+    text-transform: capitalize;
+}
+
+table,
+td {
+    border: 1px solid black;
+}
+
+p:first-letter {
+    color: brown;
+    font: bold 20px serif;
+}
