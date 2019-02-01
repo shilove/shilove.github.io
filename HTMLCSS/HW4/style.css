@@ -81,3 +81,14 @@ p:first-letter {
     color: brown;
     font: bold 20px serif;
 }
+
+input:invalid {
+    background: red;
+}
+input:valid {
+    background: green;
+}
+
+header h2:hover + nav {
+    border: red solid 3px;
+}
