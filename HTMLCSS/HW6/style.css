@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i,800,800i|Roboto&subset=cyrillic');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 1170px;
+}
+
+.container {
+    width: 1170px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+header {
+    height: 700px;
+    color: white;
+    background: black;
+}
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+img[alt=logo] {
+    width: 270px;
+    margin-top: 20px;
+}
+
+header .social {
+    font: normal 18px sans-serif;
+    float: right;
+    margin: 64px 50px 0 0;
+}
+
+header div:nth-child(3) {
+    width: 270px;
+    height: 300px;
+    position: absolute;
+    bottom: 64px;
+    background-color: white;
+    padding: 82px 22px;
+    box-sizing: border-box;
+    color: black;
+    font: 700 18px Raleway;
+    font-style: italic;
+    line-height: 14px;
+}
+
+header div:nth-child(3)>span {
+    display: block;
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+header div:nth-child(4) {
+    width: 313px;
+    height: 280px;
+    position: absolute;
+    bottom: 196px;
+    right: 109px;
+    color: white;
+    font: 400 18px Raleway;
+}
+
+header div:nth-child(4)>span {
+    display: block;
+    font: 700 48px Raleway;
+    line-height: 34px;
+    text-transform: uppercase;
+}
+
+header div:nth-child(4)>a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 124px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font: bold 14px Raleway;
+    line-height: 45px;
+    text-transform: uppercase;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+header div:nth-child(4)>a:hover {
+    color: white;
+    background: black;
+    border: 2px solid white;
+}
+
+header div:nth-child(4)>a:active {
+    background: rgb(50, 50, 50);
+}
+
+section .container {
+    top: -20px;
+    margin-bottom: -20px; 
+}
+
+.sidebarLeft {
+    width: 270px;
+    height: 80%;
+    float: left;
+}
+
+nav {
+    width: 270px;
+    height: 475px;
+}
+
+nav div {
+    width: 270px;
+    height: 66px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font: 700 14px sans-serif;
+    line-height: 66px;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a:hover {
+    color: white;
+    background: black;
+    cursor: pointer;
+}
+
+nav a {
+    display: block;
+    width: 270px;
+    padding-left: 40px;
+    color: black;
+    font: 400 14px sans-serif;
+    line-height: 37px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.submenu {
+    display: none;
+    z-index: 2;
+}
+
+ a:hover+.submenu,
+.submenu:hover {
+    display: block;
+    position: absolute;
+    left: 270px;
+    top: 0;
+    border: 2px dashed black;
+    box-sizing: border-box;
+    background: white;
+}
+
+nav+div {
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    margin-top: 30px;
+    color: white;
+    font: 400 36px Raleway;
+    line-height: 300px;
+    text-align: center;
+}
+
+.sidebarRight {
+    width: 870px;
+    height: 80%;
+    float: right;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+.sidebarRight>div {
+    position: relative;
+    margin: 20px;
+}
+
+.sidebarRight a {
+    width: 100%;
+    text-decoration: none;   
+    display: block; 
+}
+
+a[href*=prod] {
+    min-height: 250px;
+    color: black;
+    font: normal 16px sans-serif;
+}
+
+.sidebarRight a[href*='#'] {
+    color: white;
+    font: normal 14px sans-serif;
+    text-align: center;
+    line-height: 50px;
+    background-color: black;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.sidebarRight a[href*='#']:hover {
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 2px 2px rgb(150, 150, 150);
+}
+
+.sidebarRight a[href*='#']:active {
+    box-shadow: 2px 2px transparent;
+}
+
+a[href*=prod] img {
+    border: 3px solid black;
+    box-sizing: border-box;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+a[href*=prod]:hover img {
+    border: 3px dashed black;
+    box-sizing: border-box;
+}
+
+.bottombar {
+    width: 100%;
+    height: 661px;
+    clear: both;
+    position: relative;
+}
+
+.brandbar {
+    width: 100%;
+    height: 160px;
+    display: flex;
+}
+
+.brandbar a {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font: normal 80px sans-serif;
+    text-transform: uppercase;
+    line-height: 160px;
+    width: calc(100%/8);
+}
+
+.brandbar a:not(:last-child) {
+/*    border-right: 2px dashed white;*/
+    box-sizing: border-box;
+}
+
+.brandbar a:hover {
+    background: rgb(25, 25, 25);
+}
+
+.instaFeed {
+    width: 100%;
+/*    height: 350px;*/
+}
+
+.instaFeed>div:first-child {
+    margin: 52px 0 26px 0;
+    text-align: center;
+    color: #333333;
+    font: 400 italic 18px Roboto;
+    line-height: 28px;
+}
+
+.instaFeed>div:first-child>span {
+    font: 700 italic 22px Roboto;
+}
+
+.instaFeed>div:first-child>i {
+    font-size: 28px;
+}
+
+.instaFeed>div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.instaFeed>div:last-child a>img {
+    object-fit: cover;
+    width: 185px;
+    height: 185px;
+    border: 5px solid black;
+    box-sizing: border-box;
+    background: white;
+}
+
+.instaFeed>div:last-child a:hover>img {
+    border: 5px dashed black;
+}
+
+.bigSocial {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    background: black;
+    display: flex;
+}
+
+.bigSocial a {
+    width: calc(100%/3);
+    height: 150px;
+    font-size: 50px;
+    line-height: 150px;
+    text-align: center;
+    color: white;
+}
+
+.bigSocial a:hover {
+    background: rgb(25, 25, 25);
+}
+
+/*
+.bigSocial a:nth-child(2) {
+    border-right: 2px dashed white;
+    border-left: 2px dashed white;
+    box-sizing: border-box;
+}
+*/
+
+footer {
+    position: relative;
+    color: white;
+    background: rgb(50, 50, 50);
+}
+
+footer:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: black;
+}
+
+.siteMap {
+    min-height: 350px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 75px;
+    box-sizing: border-box;
+}
+
+.siteMap>div {
+    font: 400 12px Roboto;
+    line-height: 18px;
+    max-width: 270px;
+    margin: 0;
+}
+
+.siteMap span:first-child {
+    display: block;
+    font: 400 18px Raleway;
+    margin-bottom: 30px;
+}
+
+.siteMap div:not(:nth-child(-n+3))>span:first-child {
+    margin-bottom: 8px;
+}
+
+.siteMap a {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+.paySystems {
+    margin-top: 25px;
+    line-height: 0;
+}
+
+.paySystems a:not(:last-child) {
+    margin-right: 10px;
+    float: left;
+}
+
+footer input {
+    height: 30px;
+    margin: 20px 0;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
+
+footer input[type=email] {
+    width: 180px;
+    background: white;
+    padding: 0 3px;
+    font: 400 12px Roboto;
+}
+
+footer input[type=submit] {
+    width: 71px;
+    background-color: black;
+    color: white;
+    font: 400 12px Roboto;
+    padding: 0;
+    text-align: center;
+}
+
+.siteMap>div:nth-child(5)>span {
+    display: block;
+}
+.siteMap>div:nth-child(5)>span:not(:nth-child(-n+2)) {
+    margin: 7px 0;
+    font: 400 14px Raleway;
+}
+
+.siteMap>div:nth-child(5) a {
+    display: inline;
+    margin-left: 19px;
+}
+
+.copyright {
+    width: 100%;
+    line-height: 50px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    font-family: sans-serif;
+}
+
+.copyright span:first-child {
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+}
+
+.copyright span:last-child {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+}
+
+.social a{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 16px;
+    color: white;
+}
+
+.social a:hover{
+    color: rgb(160, 160, 160);
+}
+
+footer .social>a {
+    height: 50px;
+}
