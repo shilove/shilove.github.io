@@ -475,3 +475,7 @@ footer input[type=submit] {
 footer .social>a {
     height: 50px;
 }
+
+nav li:hover  {
+    background: rgb(160, 160, 160);
+}
