@@ -182,6 +182,7 @@ nav+div {
 .sidebarRight {
     width: 870px;
     height: 80%;
+    position: relative;
     float: right;
     background-color: white;
     display: flex;
@@ -282,12 +283,16 @@ a[href*=prod]:hover img {
 .instaFeed>div:first-child {
     margin: 52px 0 26px 0;
     text-align: center;
+}
+
+.instaFeed>div:first-child a {
     color: #333333;
     font: 400 italic 18px Roboto;
     line-height: 28px;
+    text-decoration: none;
 }
 
-.instaFeed>div:first-child>span {
+.instaFeed>div:first-child span {
     font: 700 italic 22px Roboto;
 }
 
@@ -393,6 +398,7 @@ footer:after {
 .paySystems {
     margin-top: 25px;
     line-height: 0;
+    font-size: 35px;
 }
 
 .paySystems a:not(:last-child) {
@@ -478,4 +484,11 @@ footer .social>a {
 
 nav li:hover  {
     background: rgb(160, 160, 160);
+}
+
+img[alt=fffffuu] {
+    position: relative;
+    margin: 0px auto;
+    top: 0;
+    height: 300px;
 }
